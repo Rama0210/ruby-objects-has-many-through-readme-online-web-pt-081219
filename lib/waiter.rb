@@ -19,7 +19,7 @@ attr_accessor :name, :yrs_experience
     Meal.new(self, customer, total, tip)
   end
   
-  def def new_meal(waiter, total, tip=0)
+ def new_meal(waiter, total, tip=0)
     Meal.new(waiter, self, total, tip)
   end
   
