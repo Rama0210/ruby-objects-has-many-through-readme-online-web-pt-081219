@@ -22,11 +22,11 @@ class Customer
   end
 end
   
-  # def waiters
-  #   Meal.all.select do |waiter|
-  #     waiter.customer == self
-  #   end
-  # end
+  def waiters
+    Meal.all.select do |waiter|
+      waiter.customer == self
+    end
+  end
   
   def waiters
   meals.map do |meal|
@@ -34,7 +34,13 @@ end
   end
 end
   
-  
+  def best_tipper
+  best_tipped_meal = meals.max do |meal_a, meal_b|
+    meal_a.tip <=> meal_b.tip
+  end
+ 
+  best_tipped_meal.customer
+end
   
   
 end
